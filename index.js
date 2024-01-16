@@ -3,7 +3,7 @@ const app = express();
 const fs = require('fs');
 const {v4} = require("uuid")
 
-const PORT = 3000;
+const PORT = 4050;
 app.use(express.json())
 
 app.post("/create-logs", async(req, res) => {
