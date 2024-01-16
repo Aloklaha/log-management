@@ -42,6 +42,10 @@ app.post("/create-logs", async(req, res) => {
 
 });
 
+app.get("/", (req, res)=>{
+    return res.status(200).json({message: "Ec2 instance running"})
+})
+
 // Validate request parameters
 const reqValidator = (body) => {
     return body !== null ? true : false;
