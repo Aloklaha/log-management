@@ -28,8 +28,9 @@ app.post("/create-logs", async(req, res) => {
 
         // Now we need to check wheather this file exists or not. If not then create or update the content
         let date = new Date();
-        let today = date.getFullYear()+"-"+date.getMonth()+1+"-"+date.getDate();
+        // let today = date.getFullYear()+"-"+date.getMonth()+1+"-"+date.getDate();
         let time = date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
+        let today = req.body.today;
         const filePath = `/log/${today}|${req.body.orgCode}|${req.body.module}.log`;
 
         // Append new content to the file
