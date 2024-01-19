@@ -11,11 +11,11 @@ app.post("/create-logs", async(req, res) => {
     if(reqValidator(req.body.data)){
         let date = new Date();
         let today = date.getFullYear()+"-"+date.getMonth()+1+"-"+date.getDate();
-        let time = date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
+        // let time = date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
         const filePath = `/log/${today}|${req.body.data.orgCode}|${req.body.data.module}.log`;
-
+        const delimiter = '\n\n----------------------------------------------------------------------\n'
         // Append new content to the file
-        fs.appendFileSync(__dirname+filePath, `[${time}]: `+"'"+JSON.stringify(req.body.data)+"'"+'\n\n', 'utf8');
+        fs.appendFileSync(__dirname+filePath, `[${date.toISOString()}]: `+"'"+JSON.stringify(req.body.data)+"'"+delimiter, 'utf8');
 
         return res.status(200).json({message: "Success", body: req.body.data})   
     }
