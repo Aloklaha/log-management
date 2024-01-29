@@ -7,7 +7,7 @@ app.use(express.json())
 
 app.post("/create-logs", async(req, res) => {
     // This API will payload and log in the file
-
+    console.log("Log req obj: ", req.body.data);
     if(reqValidator(req.body.data)){
         let date = new Date();
         let today = date.getFullYear()+"-"+date.getMonth()+1+"-"+date.getDate();

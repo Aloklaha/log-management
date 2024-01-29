@@ -1,6 +1,0 @@
-[11:35:23]: {"id":"c0e4581e-7d2d-49c9-ad99-520c69cc440b","type":"Info","desc":"Collected $10 from Brian Debes for Kick Boxing from Card","service":"payment_initiate","module":"Transaction","orgCode":"10thplanetbeaumont","createdBy":"brian","data":{"request":{},"response":{}}}
-
-[11:39:25]: [object Object]
-
-[11:40:49]: '{"id":"f76a3fb6-ead3-4aa3-9d87-f377c38c6a77","type":"Info","desc":"Collected $10 from Brian Debes for Kick Boxing from Card","service":"payment_initiate","module":"Transaction","orgCode":"10thplanetbeaumont","createdBy":"brian","data":{"request":{},"response":{}}}'
-
