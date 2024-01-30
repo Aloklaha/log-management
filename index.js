@@ -15,7 +15,15 @@ app.post("/create-logs", async(req, res) => {
         const filePath = `/log/${today}|${req.body.data.orgCode}|${req.body.data.module}.log`;
         const delimiter = '\n\n----------------------------------------------------------------------\n'
         // Append new content to the file
-        fs.appendFileSync(__dirname+filePath, `[${date.toISOString()}]: `+"'"+JSON.stringify(req.body.data)+"'"+delimiter, 'utf8');
+        // fs.appendFileSync(__dirname+filePath, `[${date.toISOString()}]: `+"'"+JSON.stringify(req.body.data)+"'"+delimiter, 'utf8');
+        fs.appendFile(__dirname+filePath, `[${date.toISOString()}]: `+"'"+JSON.stringify(req.body.data)+"'"+delimiter, (err) => {
+            if (err) {
+                console.log(err);
+            }
+            else {
+                console.log("Log file updated successfully : "+filePath);
+            }
+        });
 
         return res.status(200).json({message: "Success", body: req.body.data})   
     }
