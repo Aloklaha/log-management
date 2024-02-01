@@ -10,7 +10,7 @@ app.post("/create-logs", async(req, res) => {
     console.log("Log req obj: ", req.body.data);
     if(reqValidator(req.body.data)){
         let date = new Date();
-        let today = date.getFullYear()+"-"+date.getMonth()+1+"-"+date.getDate();
+        let today = (date.getFullYear())+"-"+(date.getMonth()+1)+"-"+(date.getDate());
         // let time = date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
         const filePath = `/log/${today}|${req.body.data.orgCode}|${req.body.data.module}.log`;
         const delimiter = '\n\n----------------------------------------------------------------------\n'
